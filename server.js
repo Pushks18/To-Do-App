@@ -1,9 +1,9 @@
 import { app } from "./app.js";
 import { connectDB } from "./data/database.js";
+import cors from "cors";
 
 connectDB();
 
-const cors = require("cors");
 const corsOptions = {
   origin: "http://localhost:3000",
   credentials: true, //access-control-allow-credentials:true
