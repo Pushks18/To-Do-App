@@ -4,7 +4,7 @@ import taskRouter from "./routes/task.js";
 import { config } from "dotenv";
 import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/error.js";
-import cors from "cors";
+// import cors from "cors";
 
 export const app = express();
 
@@ -17,14 +17,14 @@ config({
 //Using middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-    optionSuccessStatus: 200,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173",
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true,
+//     optionSuccessStatus: 200,
+//   })
+// );
 
 //using routes
 app.use("/api/v1/users", userRouter);
