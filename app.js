@@ -8,6 +8,8 @@ import cors from "cors";
 
 export const app = express();
 
+var cors = require("cors");
+
 config({
   path: "./data/config.env",
 });
@@ -17,9 +19,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
+    optionSuccessStatus: 200,
   })
 );
 
