@@ -4,11 +4,9 @@ import taskRouter from "./routes/task.js";
 import { config } from "dotenv";
 import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/error.js";
-// import cors from "cors";
+import cors from "cors";
 
 export const app = express();
-
-// var cors = require("cors");
 
 config({
   path: "./data/config.env",
@@ -17,6 +15,7 @@ config({
 //Using middleware
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 // app.use(
 //   cors({
 //     origin: "http://localhost:5173",
