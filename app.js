@@ -18,9 +18,10 @@ app.use(cookieParser());
 // app.use(cors());
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
+    allowedHeaders: true,
     // optionSuccessStatus: 200,
   })
 );
